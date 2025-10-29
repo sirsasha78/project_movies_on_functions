@@ -127,7 +127,7 @@ class Movie(AutoSlugMixin):
     )
     photo = models.ImageField(
         upload_to="movies/",
-        validators=[FileExtensionValidator(["jpg", "jpeg", "png"])],
+        validators=[FileExtensionValidator(["jpg", "jpeg", "png", "webp"])],
         blank=True,
         null=True,
         default=None,

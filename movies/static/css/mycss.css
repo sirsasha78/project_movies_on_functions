@@ -1,0 +1,70 @@
+body {
+    background: linear-gradient(90deg, #0e3bf1 0%, #151414 100%);
+}
+
+p {
+    color: aquamarine;
+}
+
+
+a {
+    color: aquamarine;
+}
+
+.nav-link {
+    color: aquamarine;
+}
+
+.navbar-nav .nav-link.active {
+    color: aquamarine;
+}
+
+
+.resized-img {
+    width: 60px;
+    height: 40px;
+}
+
+.navbar-toggler {
+    background-color: rgb(169, 168, 168);
+}
+
+
+.sidebar {
+    color: aquamarine;
+    background: linear-gradient(270deg, #0e3bf1 0%, #151414 100%);
+}
+
+
+.auth {
+    color: aquamarine;
+}
+
+.wrapper {
+    min-height: 100vh;
+    /* Высота минимум равна высоте экрана */
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
+    /* Основной контент займет оставшееся пространство */
+}
+
+footer {
+    background-color: black;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.card {
+    background: linear-gradient(270deg, #0e3bf1 0%, #151414 100%);
+    color: aquamarine;
+}
+
+.image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

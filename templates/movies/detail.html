@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<img class="image" src="{{ movie.photo.url }}" alt="">
+{{ movie.description|linebreaks }}
+{% if movie.trailer %}
+<a href="{{ movie.trailer }}">Смотреть трэйлер</a>
+{% endif %}
+
+{% endblock content %}
+
