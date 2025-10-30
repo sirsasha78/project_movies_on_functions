@@ -1,10 +1,15 @@
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render, get_object_or_404
+from django.core.paginator import Paginator
 from .models import Movie
 
 
 def movie_list(request: HttpRequest) -> HttpResponse:
-    movies = Movie.objects.all()
+    all_movies = Movie.objects.all()
+    paginator = Paginator(all_movies, 6)
+    page_number = request.GET.get("page", 1)
+    movies = paginator.get_page(page_number)
+
     data = {
         "movies": movies,
         "title": "Главная страница",

@@ -2,18 +2,21 @@
 
 
 {% block content %}
-{% for movie in movies %}
+
 <div class="row">
-    <div class="col-lg-4 col-md-6 mt-4">
+    {% for movie in movies %}
+    <div class="col-lg-4 col-md-6 d-flex aligin-align-items-stretch mt-4">
         <div class="card">
             <img src="{{ movie.photo.url }}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">{{ movie.title }}</h5>
-                <p class="card-text">{{ movie.description|truncatewords:20|linebreaks}}</p>
+                <p class="card-text">{{ movie.description|truncatewords:15|linebreaks}}</p>
                 <a href="{{ movie.get_absolute_url }}" class="btn btn-primary">Подробнее</a>
             </div>
         </div>
     </div>
+    {% endfor %}
 </div>
-{% endfor %}
+    
+{% include "includes/pagination.html" with page=movies %}
 {% endblock content %}

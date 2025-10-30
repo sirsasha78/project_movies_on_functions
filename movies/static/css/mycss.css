@@ -73,3 +73,9 @@ footer {
     background: linear-gradient(270deg, #0e3bf1 0%, #151414 100%);
     color: aquamarine;
 }
+
+
+.pagination {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}

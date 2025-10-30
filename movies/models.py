@@ -154,4 +154,6 @@ class Movie(AutoSlugMixin):
         verbose_name_plural = "Фильмы"
 
     def get_absolute_url(self) -> str:
+        """Возвращает URL-адрес для детального просмотра фильма."""
+
         return reverse("movies:movie_detail", args=[self.slug])
