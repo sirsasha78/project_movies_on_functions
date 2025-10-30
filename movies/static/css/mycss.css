@@ -68,3 +68,8 @@ footer {
     margin-left: auto;
     margin-right: auto;
 }
+
+.btn {
+    background: linear-gradient(270deg, #0e3bf1 0%, #151414 100%);
+    color: aquamarine;
+}

@@ -6,6 +6,7 @@ from django.core.validators import (
 from django.db import models
 from django.utils import timezone
 from django.utils.text import slugify
+from django.urls import reverse
 from unidecode import unidecode
 from typing import Any
 
@@ -151,3 +152,6 @@ class Movie(AutoSlugMixin):
         ordering = ["-rating"]
         verbose_name = "Фильм"
         verbose_name_plural = "Фильмы"
+
+    def get_absolute_url(self) -> str:
+        return reverse("movies:movie_detail", args=[self.slug])

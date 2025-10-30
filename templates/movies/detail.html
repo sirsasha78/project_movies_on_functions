@@ -4,7 +4,7 @@
 <img class="image" src="{{ movie.photo.url }}" alt="">
 {{ movie.description|linebreaks }}
 {% if movie.trailer %}
-<a href="{{ movie.trailer }}">Смотреть трэйлер</a>
+<a href="{{ movie.trailer }}" target="_blank"><button type="button" class="btn btn-primary btn-lg">Смотреть трэйлер</button></a>
 {% endif %}
 
 {% endblock content %}

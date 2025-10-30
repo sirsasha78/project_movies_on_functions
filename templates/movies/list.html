@@ -10,7 +10,7 @@
             <div class="card-body">
                 <h5 class="card-title">{{ movie.title }}</h5>
                 <p class="card-text">{{ movie.description|truncatewords:20|linebreaks}}</p>
-                <a href="{% url "movies:movie_detail" movie.id %}" class="btn btn-primary">Подробнее</a>
+                <a href="{{ movie.get_absolute_url }}" class="btn btn-primary">Подробнее</a>
             </div>
         </div>
     </div>

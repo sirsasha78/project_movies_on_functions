@@ -12,8 +12,8 @@ def movie_list(request: HttpRequest) -> HttpResponse:
     return render(request, "movies/list.html", data)
 
 
-def movie_detail(request: HttpRequest, id: int) -> HttpResponse:
-    movie = get_object_or_404(Movie, id=id)
+def movie_detail(request: HttpRequest, slug: str) -> HttpResponse:
+    movie = get_object_or_404(Movie, slug=slug)
     data = {
         "movie": movie,
         "title": movie.title,
