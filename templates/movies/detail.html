@@ -7,5 +7,6 @@
 <a href="{{ movie.trailer }}" target="_blank"><button type="button" class="btn btn-primary btn-lg">Смотреть трэйлер</button></a>
 {% endif %}
 
+<a href="{% url "movies:movie_share" movie.id %}"><button type="button" class="btn btn-primary btn-lg">Рекомендовать фильм</button></a>
 {% endblock content %}
 

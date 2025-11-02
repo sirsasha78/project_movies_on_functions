@@ -1,7 +1,10 @@
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
+from django.core.mail import send_mail
+from django.conf import settings
 from .models import Movie
+from .forms import EmailMovieForm
 
 
 def movie_list(request: HttpRequest) -> HttpResponse:
@@ -24,3 +27,30 @@ def movie_detail(request: HttpRequest, slug: str) -> HttpResponse:
         "title": movie.title,
     }
     return render(request, "movies/detail.html", data)
+
+
+def movie_share(request: HttpRequest, movie_id: int) -> HttpResponse:
+    movie = get_object_or_404(Movie, id=movie_id)
+    sent = False
+
+    if request.method == "POST":
+        form = EmailMovieForm(request.POST)
+        if form.is_valid():
+            cd = form.cleaned_data
+            movie_url = request.build_absolute_uri(movie.get_absolute_url())
+            subject = f"{cd["name"]} рекомендует к просмотру фильм {movie.title}"
+            message = (
+                f"Посмотреть фильм {movie.title} можно {movie_url}\n\n"
+                f"{cd["name"]} {cd["email"]} комментарии: {cd["comments"]}"
+            )
+            send_mail(subject, message, settings.EMAIL_HOST_USER, [cd["to"]])
+            sent = True
+    else:
+        form = EmailMovieForm()
+    data = {
+        "movie": movie,
+        "form": form,
+        "sent": sent,
+        "title": "Рекомендовать фильм",
+    }
+    return render(request, "movies/share.html", data)

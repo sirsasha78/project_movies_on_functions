@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if sent %}
+<h1>Письмо успешно отправленно</h1>
+<p>
+    Фильм "{{ movie.title }}" был успешно отправлен {{ form.cleaned_data.to}}. 
+</p>
+{% else %}
+<h1>Рекомендовать фильм "{{ movie.title }}" по электронной почте</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="sumbit" class="btn btn-primary btn-lg">Отправить письмо</button>
+</form>
+{% endif %}
+<p><a href="{{ movie.get_absolute_url }}">Назад к фильму</a></p>
+{% endblock content %}
