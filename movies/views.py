@@ -4,7 +4,8 @@ from django.core.paginator import Paginator
 from django.core.mail import send_mail
 from django.conf import settings
 from .models import Movie
-from .forms import EmailMovieForm
+from .forms import EmailMovieForm, CommentForm
+from django.views.decorators.http import require_POST
 
 
 def movie_list(request: HttpRequest) -> HttpResponse:
@@ -22,9 +23,13 @@ def movie_list(request: HttpRequest) -> HttpResponse:
 
 def movie_detail(request: HttpRequest, slug: str) -> HttpResponse:
     movie = get_object_or_404(Movie, slug=slug)
+    comments = movie.comments.filter(active=True)
+    form = CommentForm()
     data = {
         "movie": movie,
         "title": movie.title,
+        "comments": comments,
+        "form": form,
     }
     return render(request, "movies/detail.html", data)
 
@@ -54,3 +59,22 @@ def movie_share(request: HttpRequest, movie_id: int) -> HttpResponse:
         "title": "Рекомендовать фильм",
     }
     return render(request, "movies/share.html", data)
+
+
+@require_POST
+def movie_comment(request: HttpRequest, movie_id: int) -> HttpResponse:
+    movie = get_object_or_404(Movie, id=movie_id)
+    comment = None
+
+    form = CommentForm(request.POST)
+    if form.is_valid():
+        comment = form.save(commit=False)
+        comment.movie = movie
+        comment.save()
+    data = {
+        "title": "Добавить комментарий",
+        "movie": movie,
+        "form": form,
+        "comment": comment,
+    }
+    return render(request, "movies/comment.html", data)

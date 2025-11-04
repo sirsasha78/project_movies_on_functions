@@ -4,11 +4,22 @@ from django.core.validators import (
     MinValueValidator,
 )
 from django.db import models
+from django.core.exceptions import ValidationError
 from django.utils import timezone
 from django.utils.text import slugify
 from django.urls import reverse
 from unidecode import unidecode
 from typing import Any
+
+
+def validation_year(value: int):
+    """Проверяет, что переданное значение года находится в допустимом диапазоне."""
+
+    current_year = timezone.now().year
+    if value < 1888:
+        raise ValidationError("Год не может быть меньше 1888")
+    if value > current_year + 2:
+        raise ValidationError("Год не может быть больше текущего года + 2")
 
 
 class AutoSlugMixin(models.Model):
@@ -102,8 +113,7 @@ class Movie(AutoSlugMixin):
     trailer = models.URLField(blank=True, verbose_name="Ссылка на трэйлер")
     year = models.PositiveIntegerField(
         validators=[
-            MinValueValidator(1888),
-            MaxValueValidator(timezone.now().year + 2),
+            validation_year,
         ],
         verbose_name="Год выхода",
     )
@@ -157,3 +167,40 @@ class Movie(AutoSlugMixin):
         """Возвращает URL-адрес для детального просмотра фильма."""
 
         return reverse("movies:movie_detail", args=[self.slug])
+
+
+class Comment(models.Model):
+    """Модель для хранения комментариев к фильмам."""
+
+    movie = models.ForeignKey(
+        Movie,
+        on_delete=models.CASCADE,
+        related_name="comments",
+        verbose_name="Фильм",
+    )
+    name = models.CharField(max_length=80, verbose_name="Имя")
+    email = models.EmailField(verbose_name="Электронная почта")
+    body = models.TextField(verbose_name="Комментарий")
+    created = models.DateTimeField(
+        auto_now_add=True, verbose_name="Дата создания комментария"
+    )
+    updated = models.DateTimeField(
+        auto_now=True, verbose_name="Дата обновления комментария"
+    )
+    active = models.BooleanField(default=True, verbose_name="Активность комментария")
+
+    class Meta:
+        """Метакласс для настройки поведения модели."""
+
+        db_table = "comment"
+        verbose_name = "Комментарий"
+        verbose_name_plural = "Комментарии"
+        ordering = ["created"]
+        indexes = [
+            models.Index(fields=["created"]),
+        ]
+
+    def __str__(self) -> str:
+        """Возвращает строковое представление комментария."""
+
+        return f"Комментарий {self.name} фильма {self.movie}"

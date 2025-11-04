@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Movie, Genre, Director
+from .models import Movie, Genre, Director, Comment
 
 
 @admin.register(Movie)
@@ -19,3 +19,10 @@ class GenreAdmin(admin.ModelAdmin):
 @admin.register(Director)
 class DirectorAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("last_name",)}
+
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ("name", "email", "movie", "created", "active")
+    list_filter = ("active", "created", "updated")
+    search_fields = ("name", "email", "body")

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if comment %}
+<h2>Ваш комментарий был успешно добавлен</h2>
+{% else %}
+{% include "includes/comment_form.html" %}
+{% endif %}
+
+<p><a href="{{ movie.get_absolute_url }}">Назад к фильму</a></p>
+{% endblock content %}

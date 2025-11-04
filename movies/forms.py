@@ -1,4 +1,5 @@
 from django import forms
+from .models import Comment
 
 
 class EmailMovieForm(forms.Form):
@@ -10,3 +11,13 @@ class EmailMovieForm(forms.Form):
     comments = forms.CharField(
         required=False, widget=forms.Textarea, label="Комментарий"
     )
+
+
+class CommentForm(forms.ModelForm):
+    """Форма для добавления комментариев."""
+
+    class Meta:
+        """Метакласс формы, определяющий модель и поля, используемые в форме."""
+
+        model = Comment
+        fields = ("name", "email", "body")

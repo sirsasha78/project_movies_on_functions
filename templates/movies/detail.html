@@ -8,5 +8,21 @@
 {% endif %}
 
 <a href="{% url "movies:movie_share" movie.id %}"><button type="button" class="btn btn-primary btn-lg">Рекомендовать фильм</button></a>
+
+{% with comments.count as total_comments %}
+<h2>
+    Всего комментариев {{ total_comments }}
+</h2>
+{% endwith %}
+
+{% for comment in comments %}
+<p>
+    Комментарий {{ forloop.counter }}, написанный {{ comment.name }} {{ comment.created }}
+</p>
+{% empty %}
+<p>Пока нет комментариев.</p>
+{% endfor %}
+
+{% include "includes/comment_form.html" %}
 {% endblock content %}
 
