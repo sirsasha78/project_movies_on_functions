@@ -4,21 +4,19 @@ from .models import Movie, Genre, Director, Comment
 
 @admin.register(Movie)
 class MovieAdmin(admin.ModelAdmin):
-    list_display = ("title", "slug", "genre", "director")
+    list_display = ("title", "genre", "director")
     list_filter = ("year", "rating", "director", "genre")
     search_fields = ("title", "description")
-    prepopulated_fields = {"slug": ("title",)}
 
 
 @admin.register(Genre)
 class GenreAdmin(admin.ModelAdmin):
     list_display = ("name",)
-    prepopulated_fields = {"slug": ("name",)}
 
 
 @admin.register(Director)
 class DirectorAdmin(admin.ModelAdmin):
-    prepopulated_fields = {"slug": ("last_name",)}
+    list_display = ("first_name", "last_name")
 
 
 @admin.register(Comment)

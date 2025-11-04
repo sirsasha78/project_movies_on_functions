@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <p><button type="submit" class="btn btn-primary btn-lg">Добавить фильм</button></p>
+</form>
+<p><a href="{% url "movies:movie_list" %}">Назад</a></p>
+{% endblock content %}

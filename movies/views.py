@@ -1,10 +1,10 @@
-from django.http import HttpRequest, HttpResponse
-from django.shortcuts import render, get_object_or_404
+from django.http import HttpRequest, HttpResponse, HttpResponsePermanentRedirect
+from django.shortcuts import redirect, render, get_object_or_404
 from django.core.paginator import Paginator
 from django.core.mail import send_mail
 from django.conf import settings
 from .models import Movie
-from .forms import EmailMovieForm, CommentForm
+from .forms import EmailMovieForm, CommentForm, AddMovieForm
 from django.views.decorators.http import require_POST
 
 
@@ -78,3 +78,18 @@ def movie_comment(request: HttpRequest, movie_id: int) -> HttpResponse:
         "comment": comment,
     }
     return render(request, "movies/comment.html", data)
+
+
+def add_movie(request: HttpRequest) -> HttpResponse | HttpResponsePermanentRedirect:
+    if request.method == "POST":
+        form = AddMovieForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect("movies:movie_list")
+    else:
+        form = AddMovieForm()
+    data = {
+        "title": "Добавление фильма",
+        "form": form,
+    }
+    return render(request, "movies/add_movie.html", data)

@@ -6,10 +6,8 @@ from django.core.validators import (
 from django.db import models
 from django.core.exceptions import ValidationError
 from django.utils import timezone
-from django.utils.text import slugify
 from django.urls import reverse
-from unidecode import unidecode
-from typing import Any
+from autoslug import AutoSlugField
 
 
 def validation_year(value: int):
@@ -22,56 +20,18 @@ def validation_year(value: int):
         raise ValidationError("Год не может быть больше текущего года + 2")
 
 
-class AutoSlugMixin(models.Model):
-    """Абстрактный миксин для автоматического генерирования уникального slug-поля модели.
-    Подклассы должны реализовать метод `get_field_for_slug`, возвращающий имя атрибута модели,
-    значение которого используется для генерации slug."""
-
-    slug = models.SlugField(max_length=255, unique=True, db_index=True)
-
-    class Meta:
-        abstract = True
-
-    def get_field_for_slug(self) -> Any:
-        """Абстрактный метод, который должен быть переопределен в подклассе."""
-
-        raise NotImplementedError("Подкласс обязан определить метод get_field_for_slug")
-
-    def generate_slug(self) -> str:
-        """Генерирует уникальный slug на основе значения поля, указанного в `get_field_for_slug`."""
-
-        field_name = self.get_field_for_slug()
-        value_to_slug = getattr(self, field_name)
-        unique_slug = slugify(unidecode(value_to_slug), allow_unicode=False)
-        counter = 1
-
-        while self.__class__.objects.filter(slug=unique_slug).exists():
-            unique_slug = f"{unique_slug}-{counter}"
-            counter += 1
-        return unique_slug
-
-    def save(self, *args, **kwargs):
-        """Сохраняет модель, генерируя slug, если он не установлен."""
-
-        if not self.slug:
-            self.slug = self.generate_slug()
-        return super().save(*args, **kwargs)
-
-
-class Genre(AutoSlugMixin):
+class Genre(models.Model):
     """Модель, представляющая жанр в системе."""
 
     name = models.CharField(max_length=100, verbose_name="Жанр")
+    slug = AutoSlugField(
+        populate_from="name", max_length=255, unique=True, db_index=True
+    )
 
     def __str__(self) -> str:
         """Возвращает строковое представление объекта жанра."""
 
         return self.name
-
-    def get_field_for_slug(self) -> str:
-        """Возвращает имя поля, используемого для генерации слага."""
-
-        return "name"
 
     class Meta:
         """Класс метаданных для настройки модели Genre."""
@@ -81,21 +41,23 @@ class Genre(AutoSlugMixin):
         verbose_name_plural = "Жанры"
 
 
-class Director(AutoSlugMixin):
+class Director(models.Model):
     """Модель режиссера для хранения информации о режиссерах."""
 
     first_name = models.CharField(max_length=100, verbose_name="Имя")
     last_name = models.CharField(max_length=100, verbose_name="Фамилия")
+    slug = AutoSlugField(
+        populate_from="last_name",
+        unique_with="first_name",
+        max_length=255,
+        unique=True,
+        db_index=True,
+    )
 
     def __str__(self) -> str:
         """Возвращает строковое представление объекта в формате 'Фамилия Имя'."""
 
         return f"{self.last_name} {self.first_name}"
-
-    def get_field_for_slug(self) -> str:
-        """Возвращает имя поля, используемого для генерации slug."""
-
-        return "last_name"
 
     class Meta:
         """Класс Meta содержит метаданные модели."""
@@ -105,10 +67,13 @@ class Director(AutoSlugMixin):
         verbose_name_plural = "Режиссеры"
 
 
-class Movie(AutoSlugMixin):
+class Movie(models.Model):
     """Модель для представления информации о фильме."""
 
     title = models.CharField(max_length=255, verbose_name="Название фильма")
+    slug = AutoSlugField(
+        populate_from="title", max_length=255, unique=True, db_index=True
+    )
     description = models.TextField(verbose_name="Описание фильма")
     trailer = models.URLField(blank=True, verbose_name="Ссылка на трэйлер")
     year = models.PositiveIntegerField(
@@ -149,11 +114,6 @@ class Movie(AutoSlugMixin):
         """Возвращает строковое представление объекта класса."""
 
         return self.title
-
-    def get_field_for_slug(self) -> str:
-        """Возвращает поле модели, используемое для генерации slug."""
-
-        return "title"
 
     class Meta:
         """Дополнительные параметры модели."""

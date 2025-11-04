@@ -1,5 +1,5 @@
 from django import forms
-from .models import Comment
+from .models import Comment, Movie
 
 
 class EmailMovieForm(forms.Form):
@@ -21,3 +21,19 @@ class CommentForm(forms.ModelForm):
 
         model = Comment
         fields = ("name", "email", "body")
+
+
+class AddMovieForm(forms.ModelForm):
+
+    class Meta:
+        model = Movie
+        fields = (
+            "title",
+            "description",
+            "trailer",
+            "year",
+            "rating",
+            "genre",
+            "director",
+            "photo",
+        )
