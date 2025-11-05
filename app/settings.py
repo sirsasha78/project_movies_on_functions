@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "movies.apps.MoviesConfig",
     "autoslug",
+    "taggit",
 ]
 
 MIDDLEWARE = [

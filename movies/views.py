@@ -6,10 +6,16 @@ from django.conf import settings
 from .models import Movie
 from .forms import EmailMovieForm, CommentForm, AddMovieForm
 from django.views.decorators.http import require_POST
+from taggit.models import Tag
 
 
-def movie_list(request: HttpRequest) -> HttpResponse:
+def movie_list(request: HttpRequest, tag_slug=None) -> HttpResponse:
     all_movies = Movie.objects.all()
+    tag = None
+    if tag_slug:
+        tag = get_object_or_404(Tag, slug=tag_slug)
+        all_movies = all_movies.filter(tags=tag)
+
     paginator = Paginator(all_movies, 6)
     page_number = request.GET.get("page", 1)
     movies = paginator.get_page(page_number)
@@ -17,6 +23,7 @@ def movie_list(request: HttpRequest) -> HttpResponse:
     data = {
         "movies": movies,
         "title": "Главная страница",
+        "tag": tag,
     }
     return render(request, "movies/list.html", data)
 

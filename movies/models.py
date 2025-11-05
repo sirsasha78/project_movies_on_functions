@@ -8,6 +8,9 @@ from django.core.exceptions import ValidationError
 from django.utils import timezone
 from django.urls import reverse
 from autoslug import AutoSlugField
+from taggit.managers import TaggableManager
+from django.core.files import File
+from PIL import Image
 
 
 def validation_year(value: int):
@@ -18,6 +21,25 @@ def validation_year(value: int):
         raise ValidationError("Год не может быть меньше 1888")
     if value > current_year + 2:
         raise ValidationError("Год не может быть больше текущего года + 2")
+
+
+def validate_image_size(value: File):
+    """Проверяет размер изображения."""
+
+    filesize = value.size
+    if filesize > 5 * 1024 * 1024:
+        raise ValidationError("Размер изображения не может превышать 5 МБ.")
+
+
+def validate_image_with_pillow(value: File):
+    """Проверяет, что переданный файл является изображением."""
+
+    try:
+        img = Image.open(value)
+        img.verify()
+        value.seek(0)
+    except Exception:
+        raise ValidationError("Файл не является валидным изображением.")
 
 
 class Genre(models.Model):
@@ -50,7 +72,6 @@ class Director(models.Model):
         populate_from="last_name",
         unique_with="first_name",
         max_length=255,
-        unique=True,
         db_index=True,
     )
 
@@ -103,12 +124,17 @@ class Movie(models.Model):
     )
     photo = models.ImageField(
         upload_to="movies/",
-        validators=[FileExtensionValidator(["jpg", "jpeg", "png", "webp"])],
+        validators=[
+            FileExtensionValidator(["jpg", "jpeg", "png", "webp"]),
+            validate_image_size,
+            validate_image_with_pillow,
+        ],
         blank=True,
         null=True,
-        default=None,
         verbose_name="Изображение",
     )
+
+    tags = TaggableManager()
 
     def __str__(self) -> str:
         """Возвращает строковое представление объекта класса."""
@@ -119,7 +145,11 @@ class Movie(models.Model):
         """Дополнительные параметры модели."""
 
         db_table = "movie"
-        ordering = ["-rating"]
+        indexes = [
+            models.Index(fields=["year"]),
+            models.Index(fields=["genre"]),
+            models.Index(fields=["director"]),
+        ]
         verbose_name = "Фильм"
         verbose_name_plural = "Фильмы"
 
