@@ -24,5 +24,12 @@
 {% endfor %}
 
 {% include "includes/comment_form.html" %}
+
+<h2>Похожие фильмы</h2>
+{% for movie in similar_movies %}
+<p><a href="{{ movie.get_absolute_url }}">{{ movie.title }}</a></p>
+{% empty %}
+<p>Нет похожих фильмов.</p>
+{% endfor %}
 {% endblock content %}
 

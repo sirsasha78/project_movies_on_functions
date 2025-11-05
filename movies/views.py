@@ -32,11 +32,14 @@ def movie_detail(request: HttpRequest, slug: str) -> HttpResponse:
     movie = get_object_or_404(Movie, slug=slug)
     comments = movie.comments.filter(active=True)
     form = CommentForm()
+
+    similar_movies = movie.tags.similar_objects()[:4]
     data = {
         "movie": movie,
         "title": movie.title,
         "comments": comments,
         "form": form,
+        "similar_movies": similar_movies,
     }
     return render(request, "movies/detail.html", data)
 
