@@ -19,6 +19,7 @@
 <p>
     Комментарий {{ forloop.counter }}, написанный {{ comment.name }} {{ comment.created }}
 </p>
+{{ comment.body|linebreaks }}
 {% empty %}
 <p>Пока нет комментариев.</p>
 {% endfor %}

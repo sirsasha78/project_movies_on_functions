@@ -1,3 +1,4 @@
+{% load blog_tags %}
 {% load static %}
 
 <!DOCTYPE html>
@@ -56,14 +57,21 @@
                     <div class="col-lg-3 col-md-12">
                         <div class="row px-2">
                             <div class="col-lg-12 sidebar m-2 my-4">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, distinctio. Mollitia
-                                    fugit doloremque commodi possimus nihil porro dolor provident optio, soluta deserunt
-                                    odit, est incidunt deleniti.</p>
+                                <h2>Это мой сайт про кино</h2>
+                                <p>Всего фильмов на сайте {% total_movies %}</p>
+                                <h3>Самые популярные фильмы</h3>
+                                {% show_top_movies %}
                             </div>
                             <div class="col-lg-12 sidebar m-2 my-4">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, distinctio. Mollitia
-                                    fugit doloremque commodi possimus nihil porro dolor provident optio, soluta deserunt
-                                    odit, est incidunt deleniti.</p>
+                                <h3>Самые комментируемые фильмы</h3>
+                                {% get_most_commented_movies as most_commented_movies %}
+                                <ul>
+                                    {% for movie in most_commented_movies %}
+                                    <li>
+                                        <a href="{{ movie.get_absolute_url }}">{{ movie.title }}</a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
                             </div>
                             <div class="col-lg-12 sidebar m-2 my-4">
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, distinctio. Mollitia
