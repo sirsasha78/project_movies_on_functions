@@ -7,6 +7,7 @@ app_name = "movies"
 
 urlpatterns = [
     path("", views.movie_list, name="movie_list"),
+    path("search/", views.movie_search, name="movie_search"),
     path("tag/<str:tag_slug>/", views.movie_list, name="movie_list_by_tag"),
     path("addmovie/", views.add_movie, name="add_movie"),
     path("<int:movie_id>/", views.movie_share, name="movie_share"),

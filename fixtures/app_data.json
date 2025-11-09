@@ -1,0 +1,1245 @@
+[
+    {
+        "model": "admin.logentry",
+        "pk": 1,
+        "fields": {
+            "action_time": "2025-10-29T15:43:59.699Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "фантастика",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 2,
+        "fields": {
+            "action_time": "2025-10-29T15:44:13.066Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "2",
+            "object_repr": "приключения",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 3,
+        "fields": {
+            "action_time": "2025-10-29T15:44:34.756Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "3",
+            "object_repr": "драма",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 4,
+        "fields": {
+            "action_time": "2025-10-29T15:45:12.808Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "1",
+            "object_repr": "Нолан Кристофер",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 5,
+        "fields": {
+            "action_time": "2025-10-29T15:47:27.987Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "1",
+            "object_repr": "Интерстеллар",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 6,
+        "fields": {
+            "action_time": "2025-10-29T16:43:31.487Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "1",
+            "object_repr": "Интерстеллар",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 7,
+        "fields": {
+            "action_time": "2025-10-29T17:47:11.996Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "1",
+            "object_repr": "Интерстеллар",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0421\\u0441\\u044b\\u043b\\u043a\\u0430 \\u043d\\u0430 \\u0442\\u0440\\u044d\\u0439\\u043b\\u0435\\u0440\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 8,
+        "fields": {
+            "action_time": "2025-10-30T14:53:27.890Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "2",
+            "object_repr": "Дарабонт Фрэнк",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 9,
+        "fields": {
+            "action_time": "2025-10-30T14:55:21.264Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "2",
+            "object_repr": "Побег из Шоушенка",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 10,
+        "fields": {
+            "action_time": "2025-10-30T14:57:38.450Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "3",
+            "object_repr": "Зеленая миля (1999)",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 11,
+        "fields": {
+            "action_time": "2025-10-30T16:26:06.905Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "3",
+            "object_repr": "Земекис Роберт",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 12,
+        "fields": {
+            "action_time": "2025-10-30T16:27:15.826Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "4",
+            "object_repr": "Форрест Гамп",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 13,
+        "fields": {
+            "action_time": "2025-10-30T16:27:58.991Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "4",
+            "object_repr": "фэнтези",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 14,
+        "fields": {
+            "action_time": "2025-10-30T16:28:22.914Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "4",
+            "object_repr": "Джексон Питер",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 15,
+        "fields": {
+            "action_time": "2025-10-30T16:29:56.981Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "5",
+            "object_repr": "Властелин колец: Возвращение короля",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 16,
+        "fields": {
+            "action_time": "2025-11-04T14:29:56.345Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "5",
+            "object_repr": "Кэмерон Джеймс",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 17,
+        "fields": {
+            "action_time": "2025-11-04T14:43:01.393Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "8",
+            "object_repr": "Терминатор 2: Судный день",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 18,
+        "fields": {
+            "action_time": "2025-11-04T14:43:11.541Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "6",
+            "object_repr": "Терминатор 2: Судный день",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 19,
+        "fields": {
+            "action_time": "2025-11-04T14:43:50.047Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "8",
+            "object_repr": "Терминатор 2: Судный день",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 20,
+        "fields": {
+            "action_time": "2025-11-04T14:44:07.633Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "7",
+            "object_repr": "Терминатор 2: Судный день",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 21,
+        "fields": {
+            "action_time": "2025-11-04T14:44:13.710Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "6",
+            "object_repr": "Терминатор 2: Судный день",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"\\u0418\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 22,
+        "fields": {
+            "action_time": "2025-11-04T15:31:16.700Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "6",
+            "object_repr": "Скотт Ридли",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 23,
+        "fields": {
+            "action_time": "2025-11-04T15:31:36.638Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "5",
+            "object_repr": "боевик",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 24,
+        "fields": {
+            "action_time": "2025-11-05T15:31:22.638Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "5",
+            "object_repr": "Властелин колец: Возвращение короля",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Tags\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 25,
+        "fields": {
+            "action_time": "2025-11-05T15:31:31.192Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "6",
+            "object_repr": "Терминатор 2: Судный день",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Tags\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 26,
+        "fields": {
+            "action_time": "2025-11-05T15:31:37.145Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "6",
+            "object_repr": "Терминатор 2: Судный день",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 27,
+        "fields": {
+            "action_time": "2025-11-06T14:36:46.148Z",
+            "user": 1,
+            "content_type": 13,
+            "object_id": "1",
+            "object_repr": "localhost:8000",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Domain name\", \"Display name\"]}}]"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 1,
+        "fields": {
+            "name": "Can add log entry",
+            "content_type": 1,
+            "codename": "add_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 2,
+        "fields": {
+            "name": "Can change log entry",
+            "content_type": 1,
+            "codename": "change_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 3,
+        "fields": {
+            "name": "Can delete log entry",
+            "content_type": 1,
+            "codename": "delete_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 4,
+        "fields": {
+            "name": "Can view log entry",
+            "content_type": 1,
+            "codename": "view_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 5,
+        "fields": {
+            "name": "Can add permission",
+            "content_type": 2,
+            "codename": "add_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 6,
+        "fields": {
+            "name": "Can change permission",
+            "content_type": 2,
+            "codename": "change_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 7,
+        "fields": {
+            "name": "Can delete permission",
+            "content_type": 2,
+            "codename": "delete_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 8,
+        "fields": {
+            "name": "Can view permission",
+            "content_type": 2,
+            "codename": "view_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 9,
+        "fields": {
+            "name": "Can add group",
+            "content_type": 3,
+            "codename": "add_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 10,
+        "fields": {
+            "name": "Can change group",
+            "content_type": 3,
+            "codename": "change_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 11,
+        "fields": {
+            "name": "Can delete group",
+            "content_type": 3,
+            "codename": "delete_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 12,
+        "fields": {
+            "name": "Can view group",
+            "content_type": 3,
+            "codename": "view_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 13,
+        "fields": {
+            "name": "Can add user",
+            "content_type": 4,
+            "codename": "add_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 14,
+        "fields": {
+            "name": "Can change user",
+            "content_type": 4,
+            "codename": "change_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 15,
+        "fields": {
+            "name": "Can delete user",
+            "content_type": 4,
+            "codename": "delete_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 16,
+        "fields": {
+            "name": "Can view user",
+            "content_type": 4,
+            "codename": "view_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 17,
+        "fields": {
+            "name": "Can add content type",
+            "content_type": 5,
+            "codename": "add_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 18,
+        "fields": {
+            "name": "Can change content type",
+            "content_type": 5,
+            "codename": "change_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 19,
+        "fields": {
+            "name": "Can delete content type",
+            "content_type": 5,
+            "codename": "delete_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 20,
+        "fields": {
+            "name": "Can view content type",
+            "content_type": 5,
+            "codename": "view_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 21,
+        "fields": {
+            "name": "Can add session",
+            "content_type": 6,
+            "codename": "add_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 22,
+        "fields": {
+            "name": "Can change session",
+            "content_type": 6,
+            "codename": "change_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 23,
+        "fields": {
+            "name": "Can delete session",
+            "content_type": 6,
+            "codename": "delete_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 24,
+        "fields": {
+            "name": "Can view session",
+            "content_type": 6,
+            "codename": "view_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 25,
+        "fields": {
+            "name": "Can add Жанр",
+            "content_type": 7,
+            "codename": "add_genre"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 26,
+        "fields": {
+            "name": "Can change Жанр",
+            "content_type": 7,
+            "codename": "change_genre"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 27,
+        "fields": {
+            "name": "Can delete Жанр",
+            "content_type": 7,
+            "codename": "delete_genre"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 28,
+        "fields": {
+            "name": "Can view Жанр",
+            "content_type": 7,
+            "codename": "view_genre"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 29,
+        "fields": {
+            "name": "Can add Режиссер",
+            "content_type": 8,
+            "codename": "add_director"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 30,
+        "fields": {
+            "name": "Can change Режиссер",
+            "content_type": 8,
+            "codename": "change_director"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 31,
+        "fields": {
+            "name": "Can delete Режиссер",
+            "content_type": 8,
+            "codename": "delete_director"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 32,
+        "fields": {
+            "name": "Can view Режиссер",
+            "content_type": 8,
+            "codename": "view_director"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 33,
+        "fields": {
+            "name": "Can add Фильм",
+            "content_type": 9,
+            "codename": "add_movie"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 34,
+        "fields": {
+            "name": "Can change Фильм",
+            "content_type": 9,
+            "codename": "change_movie"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 35,
+        "fields": {
+            "name": "Can delete Фильм",
+            "content_type": 9,
+            "codename": "delete_movie"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 36,
+        "fields": {
+            "name": "Can view Фильм",
+            "content_type": 9,
+            "codename": "view_movie"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 37,
+        "fields": {
+            "name": "Can add Комментарий",
+            "content_type": 10,
+            "codename": "add_comment"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 38,
+        "fields": {
+            "name": "Can change Комментарий",
+            "content_type": 10,
+            "codename": "change_comment"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 39,
+        "fields": {
+            "name": "Can delete Комментарий",
+            "content_type": 10,
+            "codename": "delete_comment"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 40,
+        "fields": {
+            "name": "Can view Комментарий",
+            "content_type": 10,
+            "codename": "view_comment"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 41,
+        "fields": {
+            "name": "Can add tag",
+            "content_type": 11,
+            "codename": "add_tag"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 42,
+        "fields": {
+            "name": "Can change tag",
+            "content_type": 11,
+            "codename": "change_tag"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 43,
+        "fields": {
+            "name": "Can delete tag",
+            "content_type": 11,
+            "codename": "delete_tag"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 44,
+        "fields": {
+            "name": "Can view tag",
+            "content_type": 11,
+            "codename": "view_tag"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 45,
+        "fields": {
+            "name": "Can add tagged item",
+            "content_type": 12,
+            "codename": "add_taggeditem"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 46,
+        "fields": {
+            "name": "Can change tagged item",
+            "content_type": 12,
+            "codename": "change_taggeditem"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 47,
+        "fields": {
+            "name": "Can delete tagged item",
+            "content_type": 12,
+            "codename": "delete_taggeditem"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 48,
+        "fields": {
+            "name": "Can view tagged item",
+            "content_type": 12,
+            "codename": "view_taggeditem"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 49,
+        "fields": {
+            "name": "Can add site",
+            "content_type": 13,
+            "codename": "add_site"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 50,
+        "fields": {
+            "name": "Can change site",
+            "content_type": 13,
+            "codename": "change_site"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 51,
+        "fields": {
+            "name": "Can delete site",
+            "content_type": 13,
+            "codename": "delete_site"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 52,
+        "fields": {
+            "name": "Can view site",
+            "content_type": 13,
+            "codename": "view_site"
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$1000000$ACqFFu0BXsjqpcfiFeLY1o$XX+R7YRIvthaWDZCzUrwaYPDVh63d6CdWAWca9ZseFI=",
+            "last_login": "2025-11-06T14:37:42.876Z",
+            "is_superuser": true,
+            "username": "root",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-28T16:42:55.225Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 1,
+        "fields": {
+            "app_label": "admin",
+            "model": "logentry"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 2,
+        "fields": {
+            "app_label": "auth",
+            "model": "permission"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 3,
+        "fields": {
+            "app_label": "auth",
+            "model": "group"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 4,
+        "fields": {
+            "app_label": "auth",
+            "model": "user"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 5,
+        "fields": {
+            "app_label": "contenttypes",
+            "model": "contenttype"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 6,
+        "fields": {
+            "app_label": "sessions",
+            "model": "session"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 7,
+        "fields": {
+            "app_label": "movies",
+            "model": "genre"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 8,
+        "fields": {
+            "app_label": "movies",
+            "model": "director"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 9,
+        "fields": {
+            "app_label": "movies",
+            "model": "movie"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 10,
+        "fields": {
+            "app_label": "movies",
+            "model": "comment"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 11,
+        "fields": {
+            "app_label": "taggit",
+            "model": "tag"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 12,
+        "fields": {
+            "app_label": "taggit",
+            "model": "taggeditem"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 13,
+        "fields": {
+            "app_label": "sites",
+            "model": "site"
+        }
+    },
+    {
+        "model": "movies.genre",
+        "pk": 1,
+        "fields": {
+            "name": "фантастика",
+            "slug": "fantastika"
+        }
+    },
+    {
+        "model": "movies.genre",
+        "pk": 2,
+        "fields": {
+            "name": "приключения",
+            "slug": "priklyucheniya"
+        }
+    },
+    {
+        "model": "movies.genre",
+        "pk": 3,
+        "fields": {
+            "name": "драма",
+            "slug": "drama"
+        }
+    },
+    {
+        "model": "movies.genre",
+        "pk": 4,
+        "fields": {
+            "name": "фэнтези",
+            "slug": "fentezi"
+        }
+    },
+    {
+        "model": "movies.genre",
+        "pk": 5,
+        "fields": {
+            "name": "боевик",
+            "slug": "boevik"
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 1,
+        "fields": {
+            "first_name": "Кристофер",
+            "last_name": "Нолан",
+            "slug": "nolan"
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 2,
+        "fields": {
+            "first_name": "Фрэнк",
+            "last_name": "Дарабонт",
+            "slug": "darabont"
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 3,
+        "fields": {
+            "first_name": "Роберт",
+            "last_name": "Земекис",
+            "slug": "zemekis"
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 4,
+        "fields": {
+            "first_name": "Питер",
+            "last_name": "Джексон",
+            "slug": "dzhekson"
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 5,
+        "fields": {
+            "first_name": "Джеймс",
+            "last_name": "Кэмерон",
+            "slug": "kemeron"
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 6,
+        "fields": {
+            "first_name": "Ридли",
+            "last_name": "Скотт",
+            "slug": "skott"
+        }
+    },
+    {
+        "model": "movies.movie",
+        "pk": 1,
+        "fields": {
+            "title": "Интерстеллар",
+            "slug": "interstellar",
+            "description": "Когда засуха, пыльные бури и вымирание растений приводят человечество к продовольственному кризису, коллектив исследователей и учёных отправляется сквозь червоточину (которая предположительно соединяет области пространства-времени через большое расстояние) в путешествие, чтобы превзойти прежние ограничения для космических путешествий человека и найти планету с подходящими для человечества условиями.",
+            "trailer": "https://www.kinopoisk.ru/film/258687/video/100619/",
+            "year": 2014,
+            "rating": 8.7,
+            "genre": 1,
+            "director": 1,
+            "photo": "movies/Interstellar.webp"
+        }
+    },
+    {
+        "model": "movies.movie",
+        "pk": 2,
+        "fields": {
+            "title": "Побег из Шоушенка",
+            "slug": "pobeg-iz-shoushenka",
+            "description": "Бухгалтер Энди Дюфрейн обвинён в убийстве собственной жены и её любовника. Оказавшись в тюрьме под названием Шоушенк, он сталкивается с жестокостью и беззаконием, царящими по обе стороны решётки. Каждый, кто попадает в эти стены, становится их рабом до конца жизни. Но Энди, обладающий живым умом и доброй душой, находит подход как к заключённым, так и к охранникам, добиваясь их особого к себе расположения.",
+            "trailer": "https://www.kinopoisk.ru/film/326/video/12799/",
+            "year": 1994,
+            "rating": 9.1,
+            "genre": 3,
+            "director": 2,
+            "photo": "movies/Побег_из_Шоушенка.webp"
+        }
+    },
+    {
+        "model": "movies.movie",
+        "pk": 3,
+        "fields": {
+            "title": "Зеленая миля (1999)",
+            "slug": "zelenaya-milya-1999",
+            "description": "Пол Эджкомб — начальник блока смертников в тюрьме «Холодная гора», каждый из узников которого однажды проходит «зеленую милю» по пути к месту казни. Пол повидал много заключённых и надзирателей за время работы. Однако гигант Джон Коффи, обвинённый в страшном преступлении, стал одним из самых необычных обитателей блока.",
+            "trailer": "",
+            "year": 1999,
+            "rating": 9.1,
+            "genre": 3,
+            "director": 2,
+            "photo": "movies/Зеленая_миля.webp"
+        }
+    },
+    {
+        "model": "movies.movie",
+        "pk": 4,
+        "fields": {
+            "title": "Форрест Гамп",
+            "slug": "forrest-gamp",
+            "description": "Сидя на автобусной остановке, Форрест Гамп — не очень умный, но добрый и открытый парень — рассказывает случайным встречным историю своей необыкновенной жизни.\r\n\r\nС самого малолетства парень страдал от заболевания ног, соседские мальчишки дразнили его, но в один прекрасный день Форрест открыл в себе невероятные способности к бегу. Подруга детства Дженни всегда его поддерживала и защищала, но вскоре дороги их разошлись.",
+            "trailer": "",
+            "year": 1994,
+            "rating": 8.0,
+            "genre": 3,
+            "director": 3,
+            "photo": "movies/Форест_Гамп.webp"
+        }
+    },
+    {
+        "model": "movies.movie",
+        "pk": 5,
+        "fields": {
+            "title": "Властелин колец: Возвращение короля",
+            "slug": "vlastelin-kolec-vozvrashenie-korolya",
+            "description": "Повелитель сил тьмы Саурон направляет свою бесчисленную армию под стены Минас-Тирита, крепости Последней Надежды. Он предвкушает близкую победу, но именно это мешает ему заметить две крохотные фигурки — хоббитов, приближающихся к Роковой Горе, где им предстоит уничтожить Кольцо Всевластья.",
+            "trailer": "",
+            "year": 2003,
+            "rating": 8.7,
+            "genre": 4,
+            "director": 4,
+            "photo": "movies/Властелин_колец.webp"
+        }
+    },
+    {
+        "model": "movies.movie",
+        "pk": 6,
+        "fields": {
+            "title": "Терминатор 2: Судный день",
+            "slug": "terminator-2-sudnyi-den",
+            "description": "Прошло более десяти лет с тех пор, как киборг из 2029 года пытался уничтожить Сару Коннор — женщину, чей будущий сын выиграет войну человечества против машин.\r\n\r\nТеперь у Сары родился сын Джон и время, когда он поведёт за собой выживших людей на борьбу с машинами, неумолимо приближается. Именно в этот момент из постапокалиптического будущего прибывает новый терминатор — практически неуязвимая модель T-1000, способная принимать любое обличье. Цель нового терминатора уже не Сара, а уничтожение молодого Джона Коннора.\r\n\r\nОднако шансы Джона на спасение существенно повышаются, когда на помощь приходит перепрограммированный сопротивлением терминатор предыдущего поколения. Оба киборга вступают в смертельный бой, от исхода которого зависит судьба человечества.",
+            "trailer": "",
+            "year": 1991,
+            "rating": 8.4,
+            "genre": 1,
+            "director": 5,
+            "photo": "movies/i_oVAbFYv.webp"
+        }
+    },
+    {
+        "model": "movies.movie",
+        "pk": 7,
+        "fields": {
+            "title": "Гладиатор",
+            "slug": "gladiator",
+            "description": "Римская империя. Бесстрашного и благородного генерала Максимуса боготворят солдаты, а старый император Марк Аврелий безгранично доверяет ему и относится как к сыну. Однако опытный воин, готовый сразиться с любым противником в честном бою, оказывается бессильным перед коварными придворными интригами. Коммод, сын Марка Аврелия, убивает отца, который планировал сделать преемником не его, а Максимуса, и захватывает власть. Решив избавиться от опасного соперника, который к тому же отказывается присягнуть ему на верность, Коммод отдаёт приказ убить Максимуса и всю его семью. Чудом выжив, но не сумев спасти близких, Максимус попадает в плен к работорговцу, который продаёт его организатору гладиаторских боёв Проксимо. Так легендарный полководец становится гладиатором. Но вскоре ему представится шанс встретиться со своим смертельным врагом лицом к лицу.",
+            "trailer": "",
+            "year": 2000,
+            "rating": 8.6,
+            "genre": 5,
+            "director": 6,
+            "photo": "movies/Гладиатор.webp"
+        }
+    },
+    {
+        "model": "movies.comment",
+        "pk": 1,
+        "fields": {
+            "movie": 2,
+            "name": "sasha",
+            "email": "user1@mail.ru",
+            "body": "Проверяем работу комментариев.",
+            "created": "2025-11-04T06:20:31.051Z",
+            "updated": "2025-11-04T06:20:31.051Z",
+            "active": true
+        }
+    },
+    {
+        "model": "movies.comment",
+        "pk": 2,
+        "fields": {
+            "movie": 2,
+            "name": "sirsasha",
+            "email": "user2@mail.ru",
+            "body": "Это новый комментарий.",
+            "created": "2025-11-04T06:21:32.378Z",
+            "updated": "2025-11-04T06:21:32.378Z",
+            "active": true
+        }
+    },
+    {
+        "model": "taggit.tag",
+        "pk": 1,
+        "fields": {
+            "name": "фантастика",
+            "slug": "фантастика"
+        }
+    },
+    {
+        "model": "taggit.tag",
+        "pk": 2,
+        "fields": {
+            "name": "драма",
+            "slug": "драма"
+        }
+    },
+    {
+        "model": "taggit.tag",
+        "pk": 3,
+        "fields": {
+            "name": "приключения",
+            "slug": "приключения"
+        }
+    },
+    {
+        "model": "taggit.taggeditem",
+        "pk": 1,
+        "fields": {
+            "tag": 1,
+            "content_type": 9,
+            "object_id": 1
+        }
+    },
+    {
+        "model": "taggit.taggeditem",
+        "pk": 2,
+        "fields": {
+            "tag": 2,
+            "content_type": 9,
+            "object_id": 1
+        }
+    },
+    {
+        "model": "taggit.taggeditem",
+        "pk": 3,
+        "fields": {
+            "tag": 3,
+            "content_type": 9,
+            "object_id": 1
+        }
+    },
+    {
+        "model": "taggit.taggeditem",
+        "pk": 4,
+        "fields": {
+            "tag": 1,
+            "content_type": 9,
+            "object_id": 5
+        }
+    },
+    {
+        "model": "taggit.taggeditem",
+        "pk": 5,
+        "fields": {
+            "tag": 1,
+            "content_type": 9,
+            "object_id": 6
+        }
+    },
+    {
+        "model": "sites.site",
+        "pk": 1,
+        "fields": {
+            "domain": "localhost:8000",
+            "name": "localhost:8000"
+        }
+    }
+]

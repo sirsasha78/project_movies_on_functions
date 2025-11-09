@@ -7,9 +7,12 @@ from .models import Movie
 from .forms import EmailMovieForm, CommentForm, AddMovieForm
 from django.views.decorators.http import require_POST
 from taggit.models import Tag
+from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
 
 
 def movie_list(request: HttpRequest, tag_slug=None) -> HttpResponse:
+    """Отображает список фильмов с возможностью фильтрации по тегу и пагинацией."""
+
     all_movies = Movie.objects.all()
     tag = None
     if tag_slug:
@@ -29,6 +32,8 @@ def movie_list(request: HttpRequest, tag_slug=None) -> HttpResponse:
 
 
 def movie_detail(request: HttpRequest, slug: str) -> HttpResponse:
+    """Отображает подробную информацию о фильме по его уникальному идентификатору (slug)."""
+
     movie = get_object_or_404(Movie, slug=slug)
     comments = movie.comments.filter(active=True)
     form = CommentForm()
@@ -45,6 +50,8 @@ def movie_detail(request: HttpRequest, slug: str) -> HttpResponse:
 
 
 def movie_share(request: HttpRequest, movie_id: int) -> HttpResponse:
+    """Представление для рекомендации фильма по электронной почте."""
+
     movie = get_object_or_404(Movie, id=movie_id)
     sent = False
 
@@ -73,6 +80,8 @@ def movie_share(request: HttpRequest, movie_id: int) -> HttpResponse:
 
 @require_POST
 def movie_comment(request: HttpRequest, movie_id: int) -> HttpResponse:
+    """Обрабатывает POST-запрос на добавление комментария к фильму."""
+
     movie = get_object_or_404(Movie, id=movie_id)
     comment = None
 
@@ -91,6 +100,8 @@ def movie_comment(request: HttpRequest, movie_id: int) -> HttpResponse:
 
 
 def add_movie(request: HttpRequest) -> HttpResponse | HttpResponsePermanentRedirect:
+    """Обрабатывает добавление нового фильма через форму."""
+
     if request.method == "POST":
         form = AddMovieForm(request.POST, request.FILES)
         if form.is_valid():
@@ -103,3 +114,29 @@ def add_movie(request: HttpRequest) -> HttpResponse | HttpResponsePermanentRedir
         "form": form,
     }
     return render(request, "movies/add_movie.html", data)
+
+
+def movie_search(request: HttpRequest) -> HttpResponse:
+    """Обрабатывает поисковый запрос пользователя и возвращает результаты поиска фильмов."""
+
+    query = request.GET.get("q", "").strip()
+    if query:
+        search_vector = SearchVector("title", weight="A") + SearchVector(
+            "description", weight="B"
+        )
+        search_query = SearchQuery(query, config="russian")
+        results = (
+            Movie.objects.annotate(
+                search=search_vector, rank=SearchRank(search_vector, search_query)
+            )
+            .filter(search=search_query)
+            .order_by("-rank")
+        )
+    else:
+        results = []
+    data = {
+        "title": "Поиск фильма",
+        "query": query,
+        "results": results,
+    }
+    return render(request, "movies/search.html", data)

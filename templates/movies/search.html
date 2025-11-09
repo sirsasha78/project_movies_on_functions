@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if query %}
+<h1>Результаты поиска по запросу "{{ query }}"</h1>
+<h3>
+    {% with results.count as total_results %}
+    Найдено {{ total_results }}
+    {% endwith %}
+</h3>
+{% for movie in results %}
+<h4><a href="{{ movie.get_absolute_url }}">{{ movie.title }}</a></h4>
+<p>{{ movie.description|truncatewords:20 }}</p>
+{% empty %}
+<p>По вашему запросу нет результатов.</p>
+{% endfor %}
+{% else %}
+
+{% endif %}
+{% endblock content %}

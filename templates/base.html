@@ -36,8 +36,8 @@
                             <a class="nav-link active" href="#">Link</a>
                         </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                    <form class="d-flex" role="search" action="{% url "movies:movie_search" %}" method="get">
+                        <input class="form-control me-2" type="search" name="q" placeholder="Search" aria-label="Search" />
                         <button class="btn btn-outline-success" type="submit">Поиск</button>
                     </form>
                     <a class="auth m-2" href="#">Войти</a>
