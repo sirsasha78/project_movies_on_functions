@@ -8,7 +8,10 @@
 <h2>Регистрация</h2>
 <form action="" method="POST">
     {% csrf_token %}
-    {{ form.as_p }}
+    {% for field in form %}
+    <p>{{ field.label }}: {{ field }}</p>
+    {% endfor %}
     <button type="submit" class="btn btn-primary btn-lg">Зарегестрироваться</button>
 </form>
+<a href="{% url "login" %}">У вас есть учетная запись? Перейдите для входа</a>
 {% endblock content %}

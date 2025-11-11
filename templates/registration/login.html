@@ -5,6 +5,12 @@
 {% endblock title %}
 
 {% block content %}
+{% if messages %}
+{% for message in messages %}
+<p>Успешно {{ message }}</p>
+{% endfor %}
+{% endif %}
+
 <h2>Авторизоваться</h2>
 <form action="" method="POST">
     {% csrf_token %}
