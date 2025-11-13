@@ -6,6 +6,8 @@ from .models import Profile
 
 
 class SignUpForm(UserCreationForm):
+    """Форма регистрации нового пользователя."""
+
     first_name = forms.CharField(
         max_length=100,
         label="Имя",
@@ -24,6 +26,8 @@ class SignUpForm(UserCreationForm):
     )
 
     class Meta:
+        """Метакласс формы, определяющий модель и поля, используемые в форме."""
+
         model = get_user_model()
         fields = [
             "first_name",
@@ -36,6 +40,8 @@ class SignUpForm(UserCreationForm):
 
 
 class LoginForm(AuthenticationForm):
+    """Форма аутентификации пользователя."""
+
     username = forms.CharField(
         max_length=100,
         required=True,
@@ -52,6 +58,8 @@ class LoginForm(AuthenticationForm):
 
 
 class UpdateUserForm(forms.ModelForm):
+    """Форма для обновления данных пользователя."""
+
     username = forms.CharField(
         max_length=100,
         required=True,
@@ -63,16 +71,22 @@ class UpdateUserForm(forms.ModelForm):
     )
 
     class Meta:
-        model = User
+        """Метакласс формы, определяющий модель и поля, используемые в форме."""
+
+        model = get_user_model()
         fields = ["username", "email"]
 
 
 class UpdateProfileForm(forms.ModelForm):
+    """Форма для обновления профиля пользователя."""
+
     avatar = forms.ImageField(widget=forms.FileInput(), label="Аватар")
     bio = forms.CharField(
         required=False, widget=forms.Textarea(attrs={"rows": 5}), label="Биография"
     )
 
     class Meta:
+        """Метакласс формы, определяющий модель и поля, используемые в форме."""
+
         model = Profile
         fields = ["avatar", "bio"]

@@ -12,6 +12,8 @@
 {% endif %}
 
 <h2>Авторизоваться</h2>
+<p><a href="{% url "social:begin" "github" %}">Войдите в систему с помощью GitHub</a></p>
+<p><a href="{% url "social:begin" "google-oauth2" %}">Войдите в систему с помощью Google</a></p>
 <form action="" method="POST">
     {% csrf_token %}
     {{ form.as_p }}
