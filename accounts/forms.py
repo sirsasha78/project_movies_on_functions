@@ -1,6 +1,8 @@
 from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.models import User
+from .models import Profile
 
 
 class SignUpForm(UserCreationForm):
@@ -47,3 +49,30 @@ class LoginForm(AuthenticationForm):
         label="Пароль",
     )
     remember_me = forms.BooleanField(required=False, label="Запомнить меня")
+
+
+class UpdateUserForm(forms.ModelForm):
+    username = forms.CharField(
+        max_length=100,
+        required=True,
+        widget=forms.TextInput(),
+        label="Имя пользователя",
+    )
+    email = forms.EmailField(
+        required=True, widget=forms.TextInput(), label="Электронная почта"
+    )
+
+    class Meta:
+        model = User
+        fields = ["username", "email"]
+
+
+class UpdateProfileForm(forms.ModelForm):
+    avatar = forms.ImageField(widget=forms.FileInput(), label="Аватар")
+    bio = forms.CharField(
+        required=False, widget=forms.Textarea(attrs={"rows": 5}), label="Биография"
+    )
+
+    class Meta:
+        model = Profile
+        fields = ["avatar", "bio"]

@@ -27,6 +27,10 @@ h5 {
     color: white;
 }
 
+label {
+    color: aquamarine;
+}
+
 .nav-link {
     color: aquamarine;
 }

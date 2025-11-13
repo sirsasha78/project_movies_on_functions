@@ -158,3 +158,5 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = "movies:movie_list"
 
 SESSION_COOKIE_AGE = 60 * 60 * 24 * 30
+
+LOGIN_URL = "accounts/login"

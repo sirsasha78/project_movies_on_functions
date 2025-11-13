@@ -65,6 +65,15 @@
                     <div class="col-lg-3 col-md-12">
                         <div class="row px-2">
                             <div class="col-lg-12 sidebar m-2 my-4">
+                                {% if user.is_authenticated %}
+                                <p>Привет {{ user.username }}</p>
+                                <p><a href="{% url "profile" %}">Мой профиль</a></p>
+                                {% else %}
+                                <p>Вы не вошли в систему</p>
+                                <p><a href="{% url "password_reset" %}">Забыли свой пароль?</a></p>
+                                {% endif %}
+                            </div>
+                            <div class="col-lg-12 sidebar m-2 my-4">
                                 <h2>Это мой сайт про кино</h2>
                                 <p>Всего фильмов на сайте {% total_movies %}</p>
                                 <h3>Самые популярные фильмы</h3>
@@ -80,11 +89,6 @@
                                     </li>
                                     {% endfor %}
                                 </ul>
-                            </div>
-                            <div class="col-lg-12 sidebar m-2 my-4">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, distinctio. Mollitia
-                                    fugit doloremque commodi possimus nihil porro dolor provident optio, soluta deserunt
-                                    odit, est incidunt deleniti.</p>
                             </div>
                         </div>
                     </div>
