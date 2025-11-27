@@ -41,8 +41,8 @@
                         <button class="btn btn-outline-success" type="submit">Поиск</button>
                     </form>
                     {% if user.is_authenticated %}
-                    <a class="auth m-2" href="{% url "profile" %}"><img class="rounded-circle" width="30" src="{{ user.profile.avatar.url }}" alt=""></a>
-                    <a class="auth m-2" href="{% url "profile" %}">{{ user.username }}</a> 
+                    <a class="auth m-2" href="{% url "profile" user.pk %}"><img class="rounded-circle" width="30" src="{{ user.profile.avatar.url }}" alt=""></a>
+                    <a class="auth m-2" href="{% url "profile" user.pk %}">{{ user.username }}</a> 
                     <form action="{% url "logout" %}" method="POST">
                         {% csrf_token %}
                         <a href="#" onclick="parentNode.submit();">Выйти из системы</a>
@@ -68,7 +68,7 @@
                             <div class="col-lg-12 sidebar m-2 my-4">
                                 {% if user.is_authenticated %}
                                 <p>Привет {{ user.username }}</p>
-                                <p><a href="{% url "profile" %}">Мой профиль</a></p>
+                                <p><a href="{% url "profile" user.pk %}">Мой профиль</a></p>
                                 {% else %}
                                 <p>Вы не вошли в систему</p>
                                 <p><a href="{% url "password_reset" %}">Забыли свой пароль?</a></p>
@@ -76,7 +76,7 @@
                             </div>
                             <div class="col-lg-12 sidebar m-2 my-4">
                                 <h2>Это мой сайт про кино</h2>
-                                <p>Всего фильмов на сайте {% total_movies %}</p>
+                                <p>Всего фильмов на сайте {{ total_movies }}</p>
                                 <h3>Самые популярные фильмы</h3>
                                 {% show_top_movies %}
                             </div>
@@ -96,6 +96,7 @@
 
                     <!-- Блок контента -->
                     <div class="col-lg-8">
+                        {% include "includes/messages.html" %}
                         {% block content %}
                         {% endblock content %}
                     </div>

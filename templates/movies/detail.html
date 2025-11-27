@@ -7,7 +7,8 @@
 <a href="{{ movie.trailer }}" target="_blank"><button type="button" class="btn btn-primary btn-lg">Смотреть трэйлер</button></a>
 {% endif %}
 
-<a href="{% url "movies:movie_share" movie.id %}"><button type="button" class="btn btn-primary btn-lg">Рекомендовать фильм</button></a>
+<a href="{% url "movies:movie_share" movie.id %}"><button type="button" class="btn btn-primary btn-lg">Рекомендовать фильм</button></a> 
+<a href="{% url "movies:movie_update" movie.slug %}"><button type="button" class="btn btn-primary btn-lg">Обновить фильм</button></a> 
 
 {% with comments.count as total_comments %}
 <h2>

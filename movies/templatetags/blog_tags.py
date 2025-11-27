@@ -7,13 +7,6 @@ from django.db.models import Count
 register = template.Library()
 
 
-@register.simple_tag
-def total_movies() -> int:
-    """Вывод общего количества фильмов."""
-
-    return Movie.objects.count()
-
-
 @register.inclusion_tag("movies/top_movies.html")
 def show_top_movies(count=5) -> dict[str, QuerySet[Movie]]:
     """Вывод топовых фильмов."""

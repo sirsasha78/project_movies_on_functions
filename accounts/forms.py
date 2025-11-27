@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
+from services.validators import IMAGE_VALIDATORS
 from .models import Profile
 
 
@@ -122,12 +123,25 @@ class UpdateUserForm(forms.ModelForm):
         model = get_user_model()
         fields = ["username", "email"]
 
+    def clean_email(self):
+        """Проверка уникальности email адреса."""
+
+        email = self.cleaned_data.get("email")
+        if (
+            email
+            and User.objects.filter(email=email).exclude(pk=self.instance.pk).exists()
+        ):
+            raise forms.ValidationError("Email адрес должен быть уникальным")
+        return email
+
 
 class UpdateProfileForm(forms.ModelForm):
     """Форма для обновления профиля пользователя."""
 
     avatar = forms.ImageField(
-        widget=forms.FileInput(attrs={"class": "form-control mb-1"}), label="Аватар"
+        widget=forms.FileInput(attrs={"class": "form-control mb-1"}),
+        validators=IMAGE_VALIDATORS,
+        label="Аватар",
     )
     bio = forms.CharField(
         required=False,

@@ -91,13 +91,11 @@ class AddMovieForm(forms.ModelForm):
             "photo": forms.FileInput(attrs={"class": "form-control"}),
         }
 
-    def clean_photo(self):
-        """Проверка размера и типа загружаемого изображения."""
 
-        photo = self.cleaned_data.get("photo")
-        if photo:
-            if photo.size > 5 * 1024 * 1024:
-                raise ValidationError("Изображение не может быть больше 5 МБ.")
-            if not photo.content_type.startswith("image"):
-                raise ValidationError("Загружайте только изображения.")
-        return photo
+class MovieUpdateForm(AddMovieForm):
+    """Форма для обновления фильма."""
+
+    class Meta(AddMovieForm.Meta):
+        """Метакласс формы, определяющий модель и поля, используемые в форме."""
+
+        pass

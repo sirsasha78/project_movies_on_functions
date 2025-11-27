@@ -1,3 +1,4 @@
+from django.core.validators import FileExtensionValidator
 from django.utils import timezone
 from django.core.exceptions import ValidationError
 from django.core.files import File
@@ -31,3 +32,10 @@ def validate_image_with_pillow(value: File):
         value.seek(0)
     except Exception:
         raise ValidationError("Файл не является валидным изображением.")
+
+
+IMAGE_VALIDATORS = [
+    FileExtensionValidator(["jpg", "jpeg", "png", "webp"]),
+    validate_image_size,
+    validate_image_with_pillow,
+]
