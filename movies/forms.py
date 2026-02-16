@@ -1,6 +1,6 @@
 from django import forms
+from django_recaptcha.fields import ReCaptchaField
 from .models import Comment, Movie
-from django.core.exceptions import ValidationError
 
 
 class EmailMovieForm(forms.Form):
@@ -39,6 +39,8 @@ class EmailMovieForm(forms.Form):
 
 class CommentForm(forms.ModelForm):
     """Форма для добавления комментариев."""
+
+    recaptcha = ReCaptchaField()
 
     class Meta:
         """Метакласс формы, определяющий модель и поля, используемые в форме."""

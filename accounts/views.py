@@ -12,11 +12,13 @@ from .models import Profile
 from typing import Any
 
 
-class SignUpView(generic.CreateView):
+class SignUpView(SuccessMessageMixin, generic.CreateView):
     """Представление для регистрации нового пользователя."""
 
     form_class = SignUpForm
     template_name = "registration/signup.html"
+    success_url = reverse_lazy("login")
+    success_message = "Вы успешно зарегистрировались. Можете войти на сайт!"
 
     def dispatch(self, request: HttpRequest, *args, **kwargs) -> HttpResponse:
         """Перехватывает HTTP-запрос и проверяет, аутентифицирован ли пользователь.
@@ -28,19 +30,12 @@ class SignUpView(generic.CreateView):
             return redirect("movies:movie_list")
         return super().dispatch(request, *args, **kwargs)
 
-    def form_valid(self, form: SignUpForm) -> HttpResponse:
-        """Обрабатывает валидную форму регистрации."""
 
-        form.save()
-        username = form.cleaned_data.get("username")
-        messages.success(self.request, f"Учётная запись создана для {username}")
-        return redirect("login")
-
-
-class CustomLoginView(LoginView):
+class CustomLoginView(SuccessMessageMixin, LoginView):
     """Представление для входа в систему с использованием формы."""
 
     form_class = LoginForm
+    success_message = "Добро пожаловать на сайт!"
 
     def form_valid(self, form: LoginForm) -> HttpResponse:
         """Перехватывает валидную форму и устанавливает сессию пользователя."""
@@ -97,30 +92,6 @@ class ProfileView(UpdateView):
         """Возвращает URL для перенаправления после успешного обновления профиля."""
 
         return reverse_lazy("profile")
-
-
-# @login_required
-# def profile(request: HttpRequest) -> HttpResponse:
-#     """Отображает и обрабатывает форму профиля пользователя."""
-
-#     if request.method == "POST":
-#         user_form = UpdateUserForm(request.POST, instance=request.user)
-#         profile_form = UpdateProfileForm(
-#             request.POST, request.FILES, instance=request.user.profile
-#         )
-#         if user_form.is_valid() and profile_form.is_valid():
-#             user_form.save()
-#             profile_form.save()
-#             messages.success(request, "Ваш профиль успешно обновлён.")
-#             return redirect("profile")
-#     else:
-#         user_form = UpdateUserForm(instance=request.user)
-#         profile_form = UpdateProfileForm(instance=request.user.profile)
-#     return render(
-#         request,
-#         "registration/profile.html",
-#         {"user_form": user_form, "profile_form": profile_form},
-#     )
 
 
 class ChangePasswordView(SuccessMessageMixin, PasswordChangeView):
